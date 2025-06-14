@@ -1,0 +1,10 @@
+PyQt5==5.15.9
+moviepy==1.0.3
+whisper==1.1.10
+yt-dlp==2023.11.16
+ffmpeg-python==0.2.0
+transformers==4.35.2
+sentence-transformers==2.2.2
+numpy==1.24.4
+spacy==3.7.2
+python-dotenv==1.0.0
