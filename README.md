@@ -1,5 +1,79 @@
 # CL1PP3R_PY
+---
 
+# 🎬 CLIP AUTOMATION — Smart Video Clipper
+
+**CLIP AUTOMATION** adalah aplikasi berbasis GUI (Python) yang dirancang untuk memotong video panjang menjadi klip-klip pendek secara otomatis dan efisien. Cocok untuk content creator, editor profesional, maupun tim media sosial.
+
+---
+
+## 🚀 Fitur Utama
+
+### 🔪 Pemotongan Otomatis
+
+* Potong video berdasarkan durasi tetap
+* Import konfigurasi klip dari file `.json`
+
+### 🎥 Sumber Video Fleksibel
+
+* Mendukung berbagai format lokal: `.mp4`, `.mov`, `.avi`, `.mkv`
+* Download langsung dari YouTube (dengan URL)
+
+### 📱 Optimasi untuk Shorts
+
+* Konversi otomatis ke format vertikal (9:16)
+* Subtitle otomatis dengan 16+ gaya (Karaoke, Bold, Highlighted, dll.)
+* Pilihan kualitas model Whisper (`tiny` hingga `large`)
+
+### 🗂️ Manajemen Proyek
+
+* Log proses real-time
+* Progress bar visual
+* Penamaan file otomatis berdasarkan klip
+
+---
+
+## 🛠️ Teknologi yang Digunakan
+
+* **PyQt5** – Antarmuka GUI yang modern dan responsif
+* **MoviePy** – Pemrosesan dan pemotongan video
+* **Whisper (OpenAI)** – Transkripsi audio ke teks
+* **Hugging Face Transformers** – Analisis sentimen dan penilaian konten
+* **FFmpeg** – Rendering video lanjutan dan konversi format
+
+---
+
+## 💻 Cara Instalasi
+
+1. Pastikan Python 3.8 atau lebih tinggi telah terpasang
+2. Install FFmpeg dan tambahkan ke PATH
+3. Clone repository ini dan jalankan:
+
+   ```
+   pip install -r requirements.txt
+   ```
+4. Jalankan aplikasi:
+
+   ```
+   python CLIP_AUTOMATION.py
+   ```
+
+---
+
+## 🌟 Keunggulan
+
+* ✅ 100% otomatis — Tanpa perlu edit manual
+* 🔓 Open-source — Mudah dimodifikasi sesuai kebutuhan
+
+---
+
+## 🎯 Cocok Untuk
+
+* YouTube Shorts & TikTok Creator
+* Tim konten media sosial
+* Pembuat konten edukasi dan training
+
+---
 
 
 # 🎬 Panduan Lengkap: Membuat Klip Pendek dari Video YouTube
@@ -52,6 +126,8 @@ Panduan ini menjelaskan **langkah demi langkah** bagaimana:
 
 ## 📝 2. Pengunduhan Subtitle
 
+1. Buka bowser dan cari website untuk melakukan download subtitle youtube
+
 ### ✅ Rekomendasi Website/Tools:
 
 * [DownloadYouTubeSubtitles.com](https://downsub.com)
@@ -66,10 +142,7 @@ Panduan ini menjelaskan **langkah demi langkah** bagaimana:
 4. Simpan file di direktori proyek
 
 ---
-
-## 🧠 3. Analisis Subtitle
-
-### 💡 Contoh Prompt untuk AI (ChatGPT / LLM):
+### 💡 Lakukan Prompt untuk AI (ChatGPT / LLM) Untuk melakukan generate .json file:
 
 Analyze this subtitle file and generate 3-5 short-form video clips optimized for TikTok/YouTube Shorts with:
 1. Viral potential scoring (1–10)
@@ -77,57 +150,25 @@ Analyze this subtitle file and generate 3-5 short-form video clips optimized for
 3. Short, catchy clip titles
 4. Duration max 60 seconds per clip
 Return result in JSON format:
+```
 {
-  "video_title": "Apa yang Gua Harap Gua Tau di Umur 17",
-  "duration": "16:27",
-  "theme": "Life Advice / Entrepreneurship / Personal Growth",
+  "video_title": "Judul Video",
+  "duration": "HH:MM",
+  "theme": "Kategori/Konten",
   "clips": [
     {
-      "clip_title": "Uang Bukan Segalanya, Tapi Alat!",
-      "timestamp": "02:53 - 03:30",
-      "viral_score": 8.8
-    },
-    {
-      "clip_title": "Jangan Jadi Superman, Bangun Super Team!",
-      "timestamp": "05:07 - 05:40",
-      "viral_score": 9.0
-    }
-  ]
-}
-
-
-### 📦 Contoh Output JSON:
-
-```json
-{
-  "video_title": "Apa yang Gua Harap Gua Tau di Umur 17",
-  "duration": "16:27",
-  "theme": "Life Advice / Entrepreneurship / Personal Growth",
-  "clips": [
-    {
-      "clip_title": "Uang Bukan Segalanya, Tapi Alat!",
-      "timestamp": "02:53 - 03:30",
-      "viral_score": 8.8
-    },
-    {
-      "clip_title": "Jangan Jadi Superman, Bangun Super Team!",
-      "timestamp": "05:07 - 05:40",
-      "viral_score": 9.0
+      "clip_title": "Judul Klip",
+      "timestamp": "MM:SS - MM:SS",
+      "viral_score": X.X
     }
   ]
 }
 ```
-
----
-
-## 🐍 4. Penggunaan JSON di Aplikasi Python
-
 
 ### 📂 Memilih File JSON Lewat Browser File (GUI)
 
 ### ⚙️ Proses JSON di Aplikasi Python
 
 Gunakan data JSON untuk:
-
-
----
+1. Pemotongan video, sesuai dengan json file
+2. Menambahkan judul di clip yang sudah sesuai sama dengan json file
